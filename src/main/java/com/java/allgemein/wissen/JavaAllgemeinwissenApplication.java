@@ -9,5 +9,4 @@ public class JavaAllgemeinwissenApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(JavaAllgemeinwissenApplication.class, args);
 	}
-
 }
