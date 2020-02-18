@@ -1,37 +1,30 @@
 package com.java.allgemein.wissen.combinatorpattern;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 import static com.java.allgemein.wissen.combinatorpattern.AnimalValidator.*;
-import static com.java.allgemein.wissen.combinatorpattern.AnimalValidator.isOlderThanFive;
 
-public class AnimalRunner
-{
+public class AnimalRunner {
     public static void main(String[] args) {
-        Animal animal = new Animal("MonkeyA", "monkey_a", 8, Geschlecht.MAENNLICH);
+        Animal animal = new Animal("MonkeyA", "onkey_a", 8, Geschlecht.WEIBLICH);
         Animal animal2 = new Animal("MonkeyA", "monkey_a", 4, Geschlecht.WEIBLICH);
 
-        System.out.println(isMale().apply(animal));
-        System.out.println(isMale().apply(animal2));
+      /*  AnimalValidationResult validationResult = isMale().apply(animal);
+        System.out.println(validationResult.getReason());
+        AnimalValidationResult validationResult2 = isMale().apply(animal2);
+        System.out.println(validationResult2.getReason()); */
 
-        System.out.println(isMonkey().apply(animal));
-        System.out.println(isMonkey().apply(animal2));
 
-        System.out.println(isOlderThanFive().apply(animal));
-        System.out.println(isOlderThanFive().apply(animal2));
+        AnimalValidator animalValidator = isMale().and(isMonkey().and(isMale()));
+        AnimalValidationResult combinedResult = animalValidator.apply(animal);
+        System.out.println(combinedResult.getReason());
 
-        List<AnimalValidationResult> results = new ArrayList<>();
-        results.add(isMonkey().apply(animal2));
-        results.add(isMale().apply(animal2));
-        results.add(isOlderThanFive().apply(animal2));
+        AnimalValidator animalValidationResult[] = {isMale(), isOlderThanFive(), isMonkey()};
+        Function<Animal, List<AnimalValidationResult>> animalAnimalValidatorFunction = getAllValidationsResults(animalValidationResult);
+        List<AnimalValidationResult> result = animalAnimalValidatorFunction.apply(animal);
+        result.forEach(item -> System.out.println(item.getReason()));
 
-        for (AnimalValidationResult a : results){
-            System.out.println(a);
-        }
-        //now use of Default-method and
-        System.out.println(isMale().and(isMonkey()).and(isOlderThanFive()).apply(animal));
-        System.out.println(isMale().and(isMonkey()).and(isOlderThanFive()).apply(animal2));
 
     }
 }
