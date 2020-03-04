@@ -20,8 +20,8 @@ public class AnimalRunner {
         AnimalValidationResult combinedResult = animalValidator.apply(animal);
         System.out.println(combinedResult.getReason());
 
-        AnimalValidator animalValidationResult[] = {isMale(), isOlderThanFive(), isMonkey()};
-        Function<Animal, List<AnimalValidationResult>> animalAnimalValidatorFunction = getAllValidationsResults(animalValidationResult);
+        AnimalValidator animalValidators[] = {isMale(), isOlderThanFive(), isMonkey()};
+        Function<Animal, List<AnimalValidationResult>> animalAnimalValidatorFunction = getAllValidationsResults(animalValidators);
         List<AnimalValidationResult> result = animalAnimalValidatorFunction.apply(animal);
         result.forEach(item -> System.out.println(item.getReason()));
 
