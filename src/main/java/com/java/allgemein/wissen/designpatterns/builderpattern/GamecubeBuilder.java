@@ -16,7 +16,7 @@ public class GamecubeBuilder extends AbstractKonsolenBuilder {
 
     @Override
     void buildErscheinungsjahr() {
-        konsole.setErscheinungsjahr("2000");
+        konsole.setErscheinungsjahr( "2000");
     }
 
     @Override
