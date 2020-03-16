@@ -1,5 +1,8 @@
 package com.java.allgemein.wissen.functional.programming.streams;
 
+import java.awt.*;
+import java.util.zip.DataFormatException;
+
 public class Person {
 
     private String name;

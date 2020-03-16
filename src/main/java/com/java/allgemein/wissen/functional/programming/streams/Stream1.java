@@ -30,6 +30,8 @@ public class Stream1 {
                 .mapToInt(Person::getAge)
                 .sum();
         System.out.println(sumAges);
+        System.out.println("Methode Songtext");
+        printOutEinzelneWoerterAusSong();
 
 
     }
@@ -41,5 +43,13 @@ public class Stream1 {
                 new Person("Tima",4,150.00,"female"),
                 new Person("Baoa",20,170.00,"female")
         );
+    }
+
+    static void printOutEinzelneWoerterAusSong(){
+        List<String> songText = Arrays.asList("Dile que tú eres mía, mía Tú sabe' que eres mía, mía Tú misma lo decías Cuando yo te lo hacía (yeh) Dile que tú eres mía, mía Tú sabe' que eres mía, mía Tú misma lo decías Cuando yo te lo hacía".split(" "));
+        songText.stream()
+               // .distinct() sorgt dafür, dass jedes Element nur 1x vorkommt
+                .sorted()
+                .forEach(System.out::println);
     }
 }
