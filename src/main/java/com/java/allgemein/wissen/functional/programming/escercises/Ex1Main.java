@@ -14,6 +14,17 @@ public class Ex1Main {
         main.prettyPrintApple(main.ex1AppleList,new Ex1PrettyFormatter());
         main.prettyPrintApple(main.ex1AppleList,new Ex1WeightFormatter());
 
+        //old fashioned way
+        main.prettyPrintApple(main.ex1AppleList, new Ex1AppleFormatter() {
+            @Override
+            public String accept(Ex1Apple apple) {
+                return "The colour of the apple is: " + apple.getColour();
+            }
+        });
+
+        // Lambda möglich da das Interface nur eine Methode hat
+        main.prettyPrintApple(main.ex1AppleList, apple -> "Der Apfel ist reif ? " + ""+ apple.isReif());
+
     }
 
     public List<Ex1Apple> createExampleList() {
