@@ -1,4 +1,4 @@
-package com.java.allgemein.wissen.functional.programming.escercises;
+package com.java.allgemein.wissen.functional.programming.excercises;
 
 import java.util.ArrayList;
 import java.util.List;

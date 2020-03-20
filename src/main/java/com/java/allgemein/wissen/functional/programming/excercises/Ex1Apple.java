@@ -1,4 +1,4 @@
-package com.java.allgemein.wissen.functional.programming.escercises;
+package com.java.allgemein.wissen.functional.programming.excercises;
 
 public class Ex1Apple {
 

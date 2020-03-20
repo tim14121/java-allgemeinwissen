@@ -1,5 +1,6 @@
 package com.java.allgemein.wissen.functional.programming;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,12 +12,11 @@ public class StreamClass {
 
     public static void main(String[] args) {
 
-        List<Person>people = List.of(
-                new Person("John", MALE),
-                new Person("Tylor", MALE),
-                new Person("Chlow", FEMALE),
-                new Person("Crazy", DIVERSE)
-        );
+        List<Person>people = new ArrayList<>();
+        people.add(new Person("John", MALE));
+        people.add(new Person("Tylor", MALE));
+        people.add(new Person("Chlow", FEMALE));
+        people.add(new Person("Crazy", DIVERSE));
 
         StreamClass streamClass = new StreamClass();
         streamClass.streamOperationsOnList(people);

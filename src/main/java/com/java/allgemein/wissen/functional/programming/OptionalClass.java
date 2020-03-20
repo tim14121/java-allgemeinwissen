@@ -15,7 +15,6 @@ public class OptionalClass {
         Optional<String> hello = Optional.ofNullable("hello");
 
         System.out.println(hello.isPresent());
-        System.out.println(hello.isEmpty());
 
         String orElse = hello.orElse("world");
         System.out.println(orElse);
